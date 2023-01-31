@@ -1,9 +1,14 @@
 <script setup>
-import Header from "./components/Header.vue";
+import Nav from "./components/Nav.vue";
 </script>
 
 <template>
-  <Header />
+  <Nav />
+  <router-view></router-view>
 </template>
 
-<style></style>
+<style>
+template {
+  max-height: 100vh;
+}
+</style>
