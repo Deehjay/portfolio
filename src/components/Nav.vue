@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="">
     <router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>
     <a href="#">Work</a>
@@ -14,6 +14,6 @@ nav {
   justify-content: center;
   gap: 10px;
   height: 5vh;
-  border-bottom: 1px solid black;
+  text-transform: uppercase;
 }
 </style>
