@@ -49,7 +49,7 @@ export default {
         Junior Software Developer
       </h1>
       <p class="mt-2 mb-2">Full Stack Developer // Nottingham, UK</p>
-      <Button text="Get in touch" />
+      <Button text="Get in touch" internal="true" link="/work" />
     </header>
   </div>
 </template>
