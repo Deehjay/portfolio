@@ -10,7 +10,7 @@
         class="flex flex-col justify-center items-center max-w-md gap-1 shadow-xl p-3 rounded-xl">
         <h1 class="text-2xl">Hi 👋, I'm Dan!</h1>
         <p class="text-xs">
-          Having grown up in the 'golden age' of the internet in the early
+          Having grown up during the big boom of the internet in the early
           2000s, I've always had a deep interest and connection with all things
           tech. Ever since being shown the world of Habbo Hotel in 2003
           (shoutout anyone who played!) I fell in love with tech and its
