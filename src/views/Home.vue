@@ -5,56 +5,142 @@ export default {
   components: {
     Button,
   },
+  data() {
+    return {
+      particleCount: 30,
+    };
+  },
 };
 </script>
 
 <template>
-  <div id="particle-container">
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
+  <div id="particle-container" class="z-0">
+    <div v-for="n in particleCount" class="particle z-0"></div>
   </div>
-  <div class="container flex flex-col items-center justify-center p-2">
+  <div
+    class="landing flex flex-wrap items-center justify-center p-2 z-1 relative">
     <header>
-      <h1 class="flex text-5xl font-sans font-bold">
-        Hi! 👋 <br />
-        I'm Dan, <br />
-        Junior Software Developer
+      <h1 class="text-5xl font-sans font-bold">
+        <span class="line block w-full"> Hi! <span id="wave">👋</span> </span>
+        <span class="line block w-full">
+          I'm <span class="name-accent">D</span>an,
+        </span>
+        <span class="line block w-full"> Junior Software Developer </span>
       </h1>
-      <p class="mt-2 mb-2">Full Stack Developer // Nottingham, UK</p>
-      <Button text="Get in touch" internal="true" link="/work" />
+      <div class="call-to-action">
+        <p class="mt-2 mb-2">Full Stack Developer // Nottingham, UK</p>
+        <Button text="Get in touch" internal="true" link="/work" />
+      </div>
     </header>
   </div>
 </template>
 
 <style>
+.landing {
+  height: 91vh;
+}
+
+.line {
+  opacity: 0;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: fadeInAndMakeFullWidth 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+h1 span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+h1 span:nth-child(2) {
+  animation-delay: 1.3s;
+}
+
+h1 span:nth-child(3) {
+  animation-delay: 2.1s;
+}
+
+.call-to-action {
+  opacity: 0;
+  animation: fadeIn 1s;
+  animation-delay: 3.7s;
+  animation-fill-mode: forwards;
+}
+
+#particle-container {
+  opacity: 0;
+  animation: fadeIn 1s;
+  animation-fill-mode: forwards;
+}
+
+#wave {
+  animation: wave-animation 1s;
+  animation-delay: 0.6s;
+  animation-iteration-count: 1;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-8deg);
+  }
+
+  60% {
+    transform: rotate(14deg);
+  }
+
+  80% {
+    transform: rotate(-8deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+header {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAndMakeFullWidth {
+  0% {
+    opacity: 0;
+    width: 0%;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+.name-accent {
+  color: #68cc8c;
+  text-shadow: -5px 0 0 #223d30;
+}
+
 .container {
   height: 95vh;
 }
