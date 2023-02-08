@@ -3,6 +3,7 @@ defineProps({
   projectName: String,
   slug: String,
   cardImage: String,
+  cardHeading: String,
 });
 </script>
 
@@ -11,6 +12,7 @@ defineProps({
     <img v-bind:src="cardImage" alt="sample99" />
     <figcaption>
       <h3>{{ projectName }}</h3>
+      <h4>{{ cardHeading }}</h4>
     </figcaption>
     <router-link :to="`/work/${slug}`"></router-link>
   </figure>
@@ -24,7 +26,7 @@ defineProps({
   overflow: hidden;
   margin: 10px;
   min-width: 230px;
-  max-width: 315px;
+  max-width: 240px;
   width: 100%;
   color: black;
   text-align: left;
