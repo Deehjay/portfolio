@@ -42,7 +42,7 @@ export default {
     <input type="email" ref="email" />
     <input type="text" ref="phone" />
     <input type="text" ref="message" />
-    <button @click="handleSubmit">Submit</button>
+    <button type="submit" @click="handleSubmit">Submit</button>
   </form>
 </template>
 
