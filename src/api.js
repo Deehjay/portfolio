@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const contactApi = axios.create({
-  baseURL: "http://smiling-leggings-ray.cyclic.app",
+  baseURL: "https://pear-clever-goat.cyclic.app/",
 });
 
 export const postContactEmail = (fields) => {
