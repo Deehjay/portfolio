@@ -10,7 +10,7 @@ defineProps({
   <router-link
     v-if="internal"
     :to="link"
-    class="text-white rounded bg-gray-600 p-2 uppercase">
+    class="text-white rounded bg-gray-600 p-3 uppercase">
     {{ text }}</router-link
   >
   <a
