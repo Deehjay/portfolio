@@ -89,23 +89,25 @@ export default {
       <div class="w-3/4 flex justify-center items-center gap-52">
         <div class="content-left w-1/3 flex flex-col gap-10 items-center">
           <div>
-            <h2 class="text-2xl font-bold text-neutral">
+            <h2 class="text-5xl font-bold text-neutral">
               I'd love to hear from you! <br />Get in touch,<br />and let's have
               a chat 🌱
             </h2>
-            <p class="text-neutral-400">Let's work on something together...</p>
+            <p class="text-neutral-400 text-2xl">
+              Let's work on something together...
+            </p>
           </div>
 
           <div class="">
             <div class="flex gap-5 items-center justify-center">
               <a
-                class="social-icon bg-neutralColour p-2 w-10 text-center"
+                class="social-icon bg-neutralColour p-2 w-20 text-center"
                 href="https://github.com/Deehjay"
                 target="_blank"
                 ><i class="icon devicon-github-original"></i
               ></a>
               <a
-                class="social-icon bg-neutralColour p-2 w-10 text-center"
+                class="social-icon bg-neutralColour p-2 w-20 text-center"
                 href="https://www.linkedin.com/in/daniel-james-6a9928173/"
                 target="_blank"
                 ><i class="icon devicon-linkedin-plain"></i
@@ -207,6 +209,7 @@ export default {
 .social-icon {
   position: relative;
   z-index: 1;
+  font-size: 2rem;
 }
 
 .error-message {
