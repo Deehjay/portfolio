@@ -25,8 +25,10 @@ defineProps({
   display: inline-block;
   overflow: hidden;
   margin: 10px;
-  min-width: 230px;
-  max-width: 240px;
+  min-width: 400px;
+  max-width: 410px;
+  min-height: 400px;
+  max-width: 410px;
   width: 100%;
   color: black;
   text-align: left;
@@ -75,19 +77,19 @@ defineProps({
   position: absolute;
   left: 0;
   bottom: 0;
-  padding: 15px 20px;
+  padding: 30px 20px;
 }
 
 .snip1577 h3,
 .snip1577 h4 {
   margin: 0;
-  font-size: 1.1em;
+  font-size: 2em;
   font-weight: normal;
   opacity: 0;
 }
 
 .snip1577 h4 {
-  font-size: 0.8em;
+  font-size: 1.2em;
   text-transform: uppercase;
 }
 
