@@ -21,7 +21,7 @@ import ProjectCard from "../components/ProjectCard.vue";
 
 <style>
 .projects-container {
-  height: 91vh;
+  height: 90vh;
 }
 
 .projects-inner {
