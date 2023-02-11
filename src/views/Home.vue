@@ -20,7 +20,7 @@ export default {
   <div
     class="landing flex flex-wrap items-center justify-center p-2 z-1 relative">
     <header>
-      <h1 class="text-5xl font-sans font-bold">
+      <h1 class="text-7xl font-sans font-bold">
         <span class="line block w-full"> Hi! <span id="wave">👋</span> </span>
         <span class="line block w-full">
           I'm <span class="name-accent">D</span>an,
@@ -28,7 +28,7 @@ export default {
         <span class="line block w-full"> Junior Software Developer </span>
       </h1>
       <div class="call-to-action">
-        <p class="mt-2 mb-2">Full Stack Developer // Nottingham, UK</p>
+        <p class="mt-3 mb-3">Full Stack Developer // Nottingham, UK</p>
         <Button text="Get in touch" internal="true" link="/work" />
       </div>
     </header>
@@ -37,14 +37,14 @@ export default {
 
 <style>
 .landing {
-  height: 91vh;
+  height: 90vh;
 }
 
 .line {
   opacity: 0;
   position: relative;
   width: 100%;
-  height: 50px;
+  height: 80px;
   overflow: hidden;
   white-space: nowrap;
   animation: fadeInAndMakeFullWidth 1.5s;
@@ -69,6 +69,7 @@ h1 span:nth-child(3) {
   animation: fadeIn 1s;
   animation-delay: 3.7s;
   animation-fill-mode: forwards;
+  font-size: 2rem;
 }
 
 #particle-container {
@@ -87,7 +88,7 @@ h1 span:nth-child(3) {
 
 header {
   width: 100%;
-  max-width: 620px;
+  max-width: 945px;
   margin: 0 auto;
 }
 
