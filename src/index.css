@@ -8,6 +8,10 @@ html {
   @apply text-neutralColour;
 }
 
+body {
+  font-size: 16px;
+}
+
 /* ----- Global animations ---- */
 
 @keyframes fadeIn {
