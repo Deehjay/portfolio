@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.vue"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        neutralColour: "#333d4d",
+      },
+    },
     fontFamily: {
       sans: ["Ubuntu", "sans-serif"],
     },
