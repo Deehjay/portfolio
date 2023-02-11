@@ -85,55 +85,10 @@ h1 span:nth-child(3) {
   display: inline-block;
 }
 
-@keyframes wave-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  20% {
-    transform: rotate(14deg);
-  }
-
-  40% {
-    transform: rotate(-8deg);
-  }
-
-  60% {
-    transform: rotate(14deg);
-  }
-
-  80% {
-    transform: rotate(-8deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 header {
   width: 100%;
   max-width: 620px;
   margin: 0 auto;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInAndMakeFullWidth {
-  0% {
-    opacity: 0;
-    width: 0%;
-  }
-  100% {
-    opacity: 1;
-    width: 100%;
-  }
 }
 
 .name-accent {
