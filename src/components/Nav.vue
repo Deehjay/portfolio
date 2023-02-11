@@ -4,7 +4,7 @@
     <router-link id="nav-2nd-child" to="/work">Work</router-link>
     <div class="name-accent-container">
       <router-link to="/"
-        ><span class="text-5xl font-sans font-bold name-accent glow"
+        ><span class="text-8xl font-sans font-bold name-accent glow"
           >D</span
         ></router-link
       >
@@ -21,9 +21,11 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  height: 9vh;
+  height: 10vh;
   text-transform: uppercase;
   animation: fadeIn 0.8s;
+  font-size: 2rem;
+  border-bottom: 1px solid black;
 }
 
 #nav-2nd-child {
