@@ -29,7 +29,7 @@ export default {
       </h1>
       <div class="call-to-action">
         <p class="mt-3 mb-3">Full Stack Developer // Nottingham, UK</p>
-        <Button text="Get in touch" internal="true" link="/work" />
+        <Button text="Hire me" internal="true" link="/contact" />
       </div>
     </header>
   </div>
@@ -38,6 +38,7 @@ export default {
 <style>
 .landing {
   height: 90vh;
+  overflow: hidden;
 }
 
 .line {
