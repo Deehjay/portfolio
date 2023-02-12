@@ -87,14 +87,23 @@ export default {
 
     <div class="contact-container flex justify-center items-center">
       <div class="w-3/4 flex justify-center items-center gap-52">
-        <div class="content-left w-1/3 flex flex-col gap-10 items-center">
-          <div>
-            <h2 class="text-5xl font-bold text-neutral">
-              I'd love to hear from you! <br />Get in touch,<br />and let's have
-              a chat 🌱
+        <div class="content-left w-1/3 flex flex-col gap-10 items-start">
+          <div class="">
+            <h2 class="text-4xl font-bold text-neutral">
+              I'm currently looking for a <br />
+              <span id="role-accent">Junior Developer</span> role 🧑‍💻
             </h2>
-            <p class="text-neutral-400 text-2xl">
-              Let's work on something together...
+            <p class="text-neutral-400 text-xl">
+              Check out some of my
+              <router-link class="underline" to="/work">projects</router-link>
+            </p>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-neutral">
+              Get in touch,<br />and let's have a chat!
+            </h2>
+            <p class="text-neutral-400 text-xl">
+              Even if it's just about OldSchool RuneScape ⚔️
             </p>
           </div>
 
@@ -113,16 +122,10 @@ export default {
                 ><i class="icon devicon-linkedin-plain"></i
               ></a>
             </div>
-            <!-- <p class="text-xs italic">
-              Or mail me at
-              <a href="mailto: danielcjamesdj@gmail.com"
-                >danielcjamesdj@gmail.com</a
-              >
-            </p> -->
           </div>
         </div>
-        <div class="content-right w-1/3">
-          <h1 class="mb-6 text-2xl font-bold">Send me a message! 🚀</h1>
+        <div class="content-right w-1/4">
+          <h1 class="mb-6 text-3xl font-bold">Send me a message! 📫</h1>
           <form ref="contactForm" action="" class="flex flex-col gap-2">
             <input type="text" ref="name" placeholder="Full name*" />
             <p v-if="formErrors.name" class="error-message">
@@ -147,11 +150,11 @@ export default {
             </p>
             <button
               :disabled="buttonIsDisabled"
-              class="self-center submit-button text-white rounded bg-gray-600 p-2 uppercase"
+              class="self-center submit-button text-white bg-gray-600 p-2 uppercase text-lg drop-shadow-lg"
               type="submit"
               @click="handleSubmit">
               <i v-if="isLoading" class="fa fa-circle-o-notch fa-spin"></i>
-              {{ isLoading ? null : "Submit" }}
+              {{ isLoading ? null : "Send message" }}
               <!-- <i
                 :class="isLoading ? 'fa fa-circle-o-notch fa-spin' : 'regular'"
                 >{{ isLoading ? null : "Submit" }}</i
@@ -164,7 +167,7 @@ export default {
   </main>
 </template>
 
-<style>
+<style scoped>
 .modal {
   position: absolute;
   top: 50%;
@@ -213,7 +216,6 @@ export default {
 }
 
 .error-message {
-  font-size: 0.7rem;
   color: rgb(241, 67, 44);
 }
 
@@ -249,13 +251,13 @@ button {
 }
 
 .submit-button {
-  width: 80px;
+  width: 40%;
 }
 
 input,
 textarea {
+  font-size: 1.2rem;
   padding: 0.6rem;
-  font-size: 12px;
   border-radius: 5px;
   background-color: #f3ecec;
 
@@ -269,7 +271,7 @@ textarea:focus {
 }
 
 #message-label {
-  font-size: 0.7rem;
+  font-size: 1.2rem;
   font-weight: bold;
   margin: 5px 0 5px 0;
 }
@@ -283,5 +285,31 @@ textarea:focus {
   animation: slideInFromRight 0.8s;
   animation-fill-mode: forwards;
   animation-delay: 0.5s;
+}
+
+#role-accent {
+  --bg-size: 400%;
+  --color-one: #68cc8c;
+  --color-two: #377cfb;
+  background: linear-gradient(
+      90deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one)
+    )
+    0 0 / var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #role-accent {
+    animation: move-bg 8s linear infinite;
+  }
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
 }
 </style>
