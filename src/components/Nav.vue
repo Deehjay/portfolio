@@ -1,10 +1,10 @@
 <template>
-  <nav class="p-5">
+  <nav class="p-10 tracking-wide">
     <router-link to="/about">About</router-link>
     <router-link id="nav-2nd-child" to="/work">Work</router-link>
     <div class="name-accent-container">
       <router-link to="/"
-        ><span class="text-8xl font-sans font-bold name-accent glow"
+        ><span class="text-7xl font-sans font-bold name-accent glow"
           >D</span
         ></router-link
       >
@@ -21,10 +21,11 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  height: 10vh;
+  height: 5vh;
   text-transform: uppercase;
   animation: fadeIn 0.8s;
-  font-size: 2rem;
+  font-size: 1.3rem;
+
   border-bottom: 1px solid black;
 }
 
