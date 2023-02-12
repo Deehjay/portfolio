@@ -9,7 +9,8 @@ import ProjectCard from "../components/ProjectCard.vue";
       <div
         class="projects-inner w-1/2 flex items-center justify-center flex-wrap">
         <ProjectCard
-          v-for="project in projects"
+          v-for="(project, index) in projects"
+          :key="index"
           :projectName="project.projectName"
           :slug="project.slug"
           :cardImage="project.cardImage"
@@ -19,7 +20,7 @@ import ProjectCard from "../components/ProjectCard.vue";
   </main>
 </template>
 
-<style>
+<style scoped>
 .projects-container {
   height: 90vh;
 }
@@ -27,7 +28,7 @@ import ProjectCard from "../components/ProjectCard.vue";
 .projects-inner {
   max-height: 100%;
   opacity: 0;
-  animation: fadeIn 2s;
+  animation: slideInFromRight 1s;
   animation-fill-mode: forwards;
 }
 </style>
