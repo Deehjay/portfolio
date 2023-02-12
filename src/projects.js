@@ -4,8 +4,10 @@ export const projects = [
     slug: "know-it-all",
     cardHeading: "NC Final Group Project",
     summary: "An addictive daily quiz game with leaderboards",
-    longDescription:
-      "Know It All was a project created during the final group project phase of the Northcoders bootcamp. Our group was tasked with pitching three ideas for an app, spike our chosen technology for them, and also create MVPs. For this project, we decided to challenge ourself by learning and utilising new technologies not covered on the course, all in the mere 2-week timeframe we had to complete the project. Know It All is a web app that allows users to partake in a daily quiz comprising of five questions. Users are given a score based on their time taken and how many questions they answer correctly. Users also have access to stats such as their daily streak, and if they sign up, will be granted their own account where they can unlock achievements, and also join leaderboards which reset daily.",
+    longDescriptionP1:
+      "Know It All was a project created during the final group project phase of the Northcoders bootcamp. Our group was tasked with pitching three ideas for an app, spiking our chosen technology for them, and also creating MVPs for the ideas. For this project, we decided to challenge ourself by learning and utilising new technologies not covered on the course, all in the mere 2-week timeframe we had to complete the project.",
+    longDescriptionP2:
+      "Know It All is a web app that allows users to partake in a daily quiz comprising of five questions. Users are given a score based on their time taken and how many questions they answer correctly. Users also have access to stats such as their daily streak, and if they sign up, will be granted their own account where they can unlock achievements, and also join leaderboards which reset daily.",
     cardImage: "/Know-It-All/know-it-all-card2.png",
     images: [
       "/Know-It-All/know-it-all-1.png",
@@ -15,10 +17,20 @@ export const projects = [
       "/Know-It-All/know-it-all-5.png",
       "/Know-It-All/know-it-all-6.png",
     ],
-    tech: {
-      fe: ["Svelte", "TypeScript", "DaisyUI", "TailwindCSS"],
-      be: ["MongoDB", "Express.js", "FireBase", "Node.js", "Jest"],
-    },
+    tech: [
+      "svelte",
+      "typescript",
+      "tailwindcss",
+      "mongodb",
+      "express",
+      "firebase",
+      "nodejs",
+      "jest",
+    ],
+    // tech: {
+    //   fe: ["Svelte", "TypeScript", "DaisyUI", "TailwindCSS"],
+    //   be: ["MongoDB", "Express.js", "FireBase", "Node.js", "Jest"],
+    // },
     github: "https://github.com/alexcupit/tbc-FE/",
     prod: "https://knowitallquiz.netlify.app/",
   },
