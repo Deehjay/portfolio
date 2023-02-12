@@ -3,9 +3,10 @@ import { projects } from "../projects.js";
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 import Button from "../components/Button.vue";
+import NextProject from "./NextProject.vue";
 
 export default {
-  components: { VueperSlides, VueperSlide, Button },
+  components: { VueperSlides, VueperSlide, Button, NextProject },
   data() {
     const queryString = window.location.pathname.slice(6);
 
@@ -26,70 +27,127 @@ export default {
 </script>
 
 <template>
-  <div class="container flex justify-center items-center gap-20">
-    <div class="w-1/3">
-      <VueperSlides
-        class="no-shadow"
-        arrows-inside
-        fade
-        :touchable="false"
-        fixed-height="320px"
-        bullets-outside
-        transition-speed="250">
-        <VueperSlide
-          v-for="(slide, i) in slides"
-          :slide-ratio="337 / 599"
-          :key="i"
-          :title="slide.title"
-          :image="slide.image"
-          :content="slide.content"
-          :style="'background-color: ' + ['#ff5252', '#42b983'][i % 2]">
-        </VueperSlide>
-      </VueperSlides>
-    </div>
-    <div>
-      <div
-        class="flex flex-col justify-center items-center max-w-md gap-1 shadow-xl p-3 rounded-xl">
-        <h1 class="text-2xl">{{ projectDetails.projectName }}</h1>
-        <h2 class="text-lg">{{ projectDetails.summary }}</h2>
-        <p class="text-xs" t>{{ projectDetails.longDescription }}</p>
-        <h3 class="text-base">Tech Stack:</h3>
-        <div class="flex gap-10">
-          <div v-if="projectDetails.tech.fe">
-            <p class="text-sm text-center mb-1">Front-End</p>
-            <ul class="text-xs text-center">
-              <li v-for="tech in projectDetails.tech.fe">
-                {{ tech }}
-              </li>
-            </ul>
-          </div>
-          <div v-if="projectDetails.tech.be">
-            <p class="text-sm mb-1">Back-End</p>
-            <ul class="text-xs text-center">
-              <li v-for="tech in projectDetails.tech.be">{{ tech }}</li>
-            </ul>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+  <div class="project-container flex justify-center items-center">
+    <div class="w-full flex justify-center gap-52">
+      <div class="w-1/3 content-left">
+        <div>
+          <VueperSlides
+            class="no-shadow"
+            arrows-inside
+            fade
+            :touchable="false"
+            fixed-height="620px"
+            bullets-outside
+            transition-speed="250">
+            <VueperSlide
+              v-for="(slide, i) in slides"
+              :key="i"
+              :title="slide.title"
+              :image="slide.image"
+              :content="slide.content"
+              :style="'background-color: ' + ['#ff5252', '#42b983'][i % 2]">
+            </VueperSlide>
+          </VueperSlides>
+        </div>
+      </div>
+      <div class="content-right w-1/3 flex flex-col items-center gap-8">
+        <div class="w-full bg-gray-200 p-4">
+          <h1
+            class="text-emerald mb-4 w-full uppercase text-center text-5xl font-bold tracking-wider">
+            {{ projectDetails.projectName }}
+          </h1>
+          <div>
+            <div class="flex gap-8 justify-center">
+              <div v-for="tech in projectDetails.tech" class="tooltip">
+                <i
+                  :class="`devicon-${tech}-plain devicon-${tech}-original text-5xl text-neutralColour`"></i>
+                <span class="tooltiptext">{{ tech }}</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="flex gap-10">
-          <Button text="GitHub" :link="projectDetails.github" />
-          <Button
-            v-if="projectDetails.prod"
-            text="Live"
-            :link="projectDetails.prod" />
+        <h2 class="text-xl italic text-gray-400 font-bold">
+          {{ projectDetails.summary }}
+        </h2>
+        <p class="text-lg text-justify">
+          {{ projectDetails.longDescriptionP1 }}
+        </p>
+        <p class="text-lg text-justify">
+          {{ projectDetails.longDescriptionP2 }}
+        </p>
+
+        <div class="w-full flex justify-center items-center gap-10 mt-4">
+          <div>
+            <Button
+              text="live view"
+              :internal="false"
+              :link="projectDetails.prod" />
+          </div>
+          <div>
+            <Button
+              text="source code"
+              :internal="false"
+              :link="projectDetails.github" />
+          </div>
         </div>
+        <NextProject class="self-end" :currProject="projectDetails.slug" />
       </div>
     </div>
   </div>
 </template>
 
-<style>
-.ex--center-mode {
-  width: 600px;
-  max-width: 100%;
-  margin: auto;
+<style scoped>
+.content-left {
+  animation: slideInFromBottom 0.7s;
 }
 
-.vueper-container {
-  width: 200px;
+.content-right {
+  animation: slideInFromTop 0.7s;
+}
+.project-container {
+  height: 90vh;
+  overflow: hidden;
+}
+
+.test {
+  width: 1000px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 120%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 </style>
