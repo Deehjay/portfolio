@@ -5,7 +5,7 @@ import ProjectCard from "../components/ProjectCard.vue";
 
 <template>
   <main>
-    <div class="projects-container flex justify-center items-center">
+    <section class="projects-container flex justify-center items-center">
       <div
         class="projects-inner w-1/2 flex items-center justify-center flex-wrap">
         <ProjectCard
@@ -16,7 +16,7 @@ import ProjectCard from "../components/ProjectCard.vue";
           :cardImage="project.cardImage"
           :cardHeading="project.cardHeading" />
       </div>
-    </div>
+    </section>
   </main>
 </template>
 
