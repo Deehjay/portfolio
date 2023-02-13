@@ -13,15 +13,29 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "Home",
+      name: "Daniel James // Nottingham, UK",
       component: Home,
     },
-    { path: "/about", name: "About", component: About },
-    { path: "/work", name: "Work", component: Work },
-
-    { path: "/work/:projectName", name: "Project", component: SingleProject },
-    { path: "/contact", name: "Contact", component: Contact },
+    { path: "/about", name: "Daniel James // About", component: About },
+    { path: "/work", name: "Daniel James // Work", component: Work },
+    {
+      path: "/work/:projectName",
+      name: "Daniel James // Project",
+      component: SingleProject,
+    },
+    { path: "/contact", name: "Daniel James // Contact", component: Contact },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  const parts = to.path.split("/");
+  const lastPart = parts[parts.length - 1];
+  const capitalised = lastPart
+    .replace(/[-_]+/g, " ")
+    .replace(/\b\w/g, (l) => l.toUpperCase())
+    .trim();
+  document.title = `Daniel James // ${capitalised}`;
+  next();
 });
 
 createApp(App).use(router).mount("#app");
