@@ -30,73 +30,75 @@ export default {
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
-  <div class="project-container flex justify-center items-center">
-    <div class="w-full flex justify-center gap-52">
-      <div class="w-1/3 content-left">
-        <div>
-          <VueperSlides
-            class="no-shadow"
-            arrows-inside
-            fade
-            :touchable="false"
-            fixed-height="620px"
-            bullets-outside
-            transition-speed="250">
-            <VueperSlide
-              v-for="(slide, i) in slides"
-              :key="i"
-              :title="slide.title"
-              :image="slide.image"
-              :content="slide.content"
-              :style="'background-color: ' + ['#ff5252', '#42b983'][i % 2]">
-            </VueperSlide>
-          </VueperSlides>
-        </div>
-      </div>
-      <div class="content-right w-1/3 flex flex-col items-center gap-8">
-        <div class="w-full bg-gray-200 p-4">
-          <h1
-            class="text-emerald mb-4 w-full uppercase text-center text-5xl font-bold tracking-wider">
-            {{ projectDetails.projectName }}
-          </h1>
+  <main>
+    <section class="project-container flex justify-center items-center">
+      <div class="w-full flex justify-center gap-52">
+        <div class="w-1/3 content-left">
           <div>
-            <div class="flex gap-8 justify-center">
-              <div v-for="tech in projectDetails.tech" class="tooltip">
-                <i
-                  :class="`devicon-${tech}-plain devicon-${tech}-original text-5xl text-neutralColour`"></i>
-                <span class="tooltiptext">{{ tech }}</span>
+            <VueperSlides
+              class="no-shadow"
+              arrows-inside
+              fade
+              :touchable="false"
+              fixed-height="620px"
+              bullets-outside
+              transition-speed="250">
+              <VueperSlide
+                v-for="(slide, i) in slides"
+                :key="i"
+                :title="slide.title"
+                :image="slide.image"
+                :content="slide.content"
+                :style="'background-color: ' + ['#ff5252', '#42b983'][i % 2]">
+              </VueperSlide>
+            </VueperSlides>
+          </div>
+        </div>
+        <div class="content-right w-1/3 flex flex-col items-center gap-8">
+          <div class="w-full bg-gray-200 p-4">
+            <h1
+              class="text-emerald mb-4 w-full uppercase text-center text-5xl font-bold tracking-wider">
+              {{ projectDetails.projectName }}
+            </h1>
+            <div>
+              <div class="flex gap-8 justify-center">
+                <div v-for="tech in projectDetails.tech" class="tooltip">
+                  <i
+                    :class="`devicon-${tech}-plain devicon-${tech}-original text-5xl text-neutralColour`"></i>
+                  <span class="tooltiptext">{{ tech }}</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <h2 class="text-xl italic text-gray-400 font-bold">
-          {{ projectDetails.summary }}
-        </h2>
-        <p class="text-lg text-justify">
-          {{ projectDetails.longDescriptionP1 }}
-        </p>
-        <p class="text-lg text-justify">
-          {{ projectDetails.longDescriptionP2 }}
-        </p>
+          <h2 class="text-xl italic text-gray-400 font-bold">
+            {{ projectDetails.summary }}
+          </h2>
+          <p class="text-lg text-justify">
+            {{ projectDetails.longDescriptionP1 }}
+          </p>
+          <p class="text-lg text-justify">
+            {{ projectDetails.longDescriptionP2 }}
+          </p>
 
-        <div class="w-full flex justify-center items-center gap-10 mt-4">
-          <div>
-            <Button
-              text="live view"
-              :internal="false"
-              :link="projectDetails.prod" />
+          <div class="w-full flex justify-center items-center gap-10 mt-4">
+            <div>
+              <Button
+                text="live view"
+                :internal="false"
+                :link="projectDetails.prod" />
+            </div>
+            <div>
+              <Button
+                text="source code"
+                :internal="false"
+                :link="projectDetails.github" />
+            </div>
           </div>
-          <div>
-            <Button
-              text="source code"
-              :internal="false"
-              :link="projectDetails.github" />
-          </div>
+          <NextProject class="self-end" :currProject="projectDetails.slug" />
         </div>
-        <NextProject class="self-end" :currProject="projectDetails.slug" />
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
 
 <style scoped>
