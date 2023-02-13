@@ -5,12 +5,17 @@ import { emailRegex } from "../regex.js";
 export default {
   data() {
     return {
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-      postOptions: {},
-      formErrors: {},
+      formData: {
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      },
+      formErrors: {
+        name: false,
+        email: false,
+        message: false,
+      },
       isLoading: false,
       showModal: false,
       modalMessage: "Message sent successfully!",
@@ -18,10 +23,10 @@ export default {
     };
   },
   methods: {
-    handleSubmit(e) {
+    async handleSubmit(e) {
       e.preventDefault();
 
-      this.postOptions = {
+      this.formData = {
         name: this.$refs.name.value,
         email: this.$refs.email.value,
         phone: this.$refs.phone.value,
@@ -29,38 +34,35 @@ export default {
       };
 
       this.formErrors = {
-        name: this.postOptions.name ? false : true,
-        email: emailRegex.test(this.postOptions.email) ? false : true,
-        message: this.postOptions.message ? false : true,
+        name: !this.formData.name,
+        email: !emailRegex.test(this.formData.email),
+        message: !this.formData.message,
       };
 
-      if (Object.values(this.formErrors).every((err) => err === false)) {
+      if (Object.values(this.formErrors).every((err) => !err)) {
         this.isLoading = true;
         this.buttonIsDisabled = true;
 
-        postContactEmail(this.postOptions)
-          .then(() => {
-            this.buttonIsDisabled = false;
-            this.isLoading = false;
-            this.showModal = true;
-            setTimeout(() => {
-              this.showModal = false;
-            }, 4000);
-            this.$refs.contactForm.reset();
-          })
-          .catch((err) => {
-            console.log(err);
-            this.buttonIsDisabled = false;
-            this.isLoading = false;
-            this.modalMessage = "Something went wrong!";
-            this.showModal = true;
-            setTimeout(() => {
-              this.showModal = false;
-            }, 4000);
-          });
-      }
+        try {
+          await postContactEmail(this.formData);
 
-      //
+          this.modalMessage = "Message sent successfully!";
+          this.showModal = true;
+
+          setTimeout(() => {
+            this.showModal = false;
+          }, 4000);
+
+          this.$refs.contactForm.reset();
+        } catch (err) {
+          console.error(err);
+          this.modalMessage = "Something went wrong!";
+          this.showModal = true;
+        } finally {
+          this.isLoading = false;
+          this.buttonIsDisabled = false;
+        }
+      }
     },
   },
 };
@@ -85,17 +87,19 @@ export default {
       {{ modalMessage }}
     </div>
 
-    <div class="contact-container flex justify-center items-center">
+    <section class="contact-container flex justify-center items-center">
       <div class="w-3/4 flex justify-center items-center gap-52">
         <div class="content-left w-1/3 flex flex-col gap-10 items-start">
           <div class="">
-            <h2 class="text-4xl font-bold text-neutral">
+            <h2 class="text-4xl font-bold text-neutral mb-2">
               I'm currently looking for a <br />
               <span id="role-accent">Junior Developer</span> role 🧑‍💻
             </h2>
-            <p class="text-neutral-400 text-xl">
+            <p class="text-neutral-400 text-3xl">
               Check out some of my
-              <router-link class="underline" to="/work">projects</router-link>
+              <router-link id="projects-link" class="underline" to="/work"
+                >projects</router-link
+              >
             </p>
           </div>
           <div>
@@ -155,15 +159,11 @@ export default {
               @click="handleSubmit">
               <i v-if="isLoading" class="fa fa-circle-o-notch fa-spin"></i>
               {{ isLoading ? null : "Send message" }}
-              <!-- <i
-                :class="isLoading ? 'fa fa-circle-o-notch fa-spin' : 'regular'"
-                >{{ isLoading ? null : "Submit" }}</i
-              > -->
             </button>
           </form>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 </template>
 
@@ -285,6 +285,14 @@ textarea:focus {
   animation: slideInFromRight 0.8s;
   animation-fill-mode: forwards;
   animation-delay: 0.5s;
+}
+
+#projects-link {
+  transition: all 0.5s ease;
+}
+
+#projects-link:hover {
+  color: #333d4d;
 }
 
 #role-accent {
