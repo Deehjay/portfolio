@@ -12,6 +12,15 @@ export default {
       const currentIndex = projects.indexOf(this.currProject);
       return projects[(currentIndex + 1) % projects.length];
     },
+    title() {
+      const url = this.$route.path;
+      const parts = url.split("/");
+      const lastPart = parts[parts.length - 1];
+      return lastPart
+        .replace(/[-_]+/g, " ")
+        .replace(/\b\w/g, (l) => l.toUpperCase())
+        .trim();
+    },
   },
 };
 </script>
