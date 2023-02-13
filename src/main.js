@@ -34,7 +34,7 @@ router.beforeEach((to, from, next) => {
     .replace(/[-_]+/g, " ")
     .replace(/\b\w/g, (l) => l.toUpperCase())
     .trim();
-  document.title = `Daniel James // ${capitalised}`;
+  document.title = `Daniel James // ${capitalised || "Nottingham, UK"}`;
   next();
 });
 
