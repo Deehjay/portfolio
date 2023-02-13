@@ -1,7 +1,16 @@
 <template>
   <nav class="p-10 tracking-wide">
-    <router-link to="/about">About</router-link>
-    <router-link id="nav-2nd-child" to="/work">Work</router-link>
+    <router-link
+      class="hover-underline-animation text-neutralColour"
+      to="/about"
+      >About</router-link
+    >
+    <router-link
+      class="hover-underline-animation text-neutralColour"
+      id="nav-2nd-child"
+      to="/work"
+      >Work</router-link
+    >
     <div class="name-accent-container">
       <router-link to="/"
         ><span class="text-7xl font-sans font-bold name-accent glow"
@@ -10,8 +19,17 @@
       >
     </div>
 
-    <router-link to="/contact">Contact</router-link>
-    <router-link to="/contact">CV</router-link>
+    <router-link
+      class="hover-underline-animation text-neutralColour"
+      to="/contact"
+      >Contact</router-link
+    >
+    <a
+      class="hover-underline-animation text-neutralColour"
+      href="/CV/Daniel-James-CV.pdf"
+      target="_blank"
+      >CV</a
+    >
   </nav>
 </template>
 
@@ -54,5 +72,28 @@ nav {
 
 nav .router-link-exact-active {
   color: #68cc8c;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #333d4d;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 </style>
