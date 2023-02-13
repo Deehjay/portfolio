@@ -14,31 +14,50 @@ export default {
 </script>
 
 <template>
-  <div id="particle-container" class="z-0">
-    <div v-for="n in particleCount" class="particle z-0"></div>
-  </div>
-  <div
-    class="landing flex flex-wrap items-center justify-center p-2 z-1 relative">
-    <header>
-      <h1 class="text-7xl font-sans font-bold">
-        <span class="line block w-full"> Hi! <span id="wave">👋</span> </span>
-        <span class="line block w-full">
-          I'm <span class="name-accent">D</span>an,
-        </span>
-        <span class="line block w-full"> Junior Software Developer </span>
-      </h1>
-      <div class="call-to-action">
-        <p class="mt-3 mb-3">Full Stack Developer // Nottingham, UK</p>
-        <Button text="Hire me" internal="true" link="/contact" />
-      </div>
-    </header>
-  </div>
+  <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet" />
+  <main>
+    <div id="particle-container" class="z-0">
+      <div v-for="n in particleCount" class="particle z-0"></div>
+    </div>
+    <section
+      class="landing flex flex-wrap items-center justify-center p-2 z-1 relative">
+      <header>
+        <h1 class="text-7xl font-sans font-bold">
+          <span class="line block w-full">
+            Hi!
+            <i
+              id="wave"
+              class="em-svg em-wave"
+              aria-role="presentation"
+              aria-label="WAVING HAND SIGN"></i>
+            <!-- <span id="wave" class="">👋</span> -->
+          </span>
+          <span class="line block w-full">
+            I'm <span class="name-accent">D</span>an,
+          </span>
+          <span class="line block w-full"> Junior Software Developer </span>
+        </h1>
+        <div class="call-to-action">
+          <p class="mt-3 mb-3">Full Stack Developer // Nottingham, UK</p>
+          <Button text="Hire me" internal="true" link="/contact" />
+        </div>
+      </header>
+    </section>
+  </main>
 </template>
 
 <style>
 .landing {
   height: 90vh;
   overflow: hidden;
+}
+
+.em,
+.em-svg {
+  height: 1em !important;
+  width: 1em !important;
+  top: 10% !important;
+  vertical-align: top !important;
 }
 
 .line {
