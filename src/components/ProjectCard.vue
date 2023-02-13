@@ -1,10 +1,24 @@
-<script setup>
-defineProps({
-  projectName: String,
-  slug: String,
-  cardImage: String,
-  cardHeading: String,
-});
+<script>
+export default {
+  props: {
+    projectName: {
+      type: String,
+      required: true,
+    },
+    slug: {
+      type: String,
+      required: true,
+    },
+    cardImage: {
+      type: String,
+      required: true,
+    },
+    cardHeading: {
+      type: String,
+      required: true,
+    },
+  },
+};
 </script>
 
 <template>
