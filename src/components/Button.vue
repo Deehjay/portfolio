@@ -1,9 +1,20 @@
-<script setup>
-defineProps({
-  text: String,
-  internal: Boolean,
-  link: String,
-});
+<script>
+export default {
+  props: {
+    text: {
+      type: String,
+      required: true,
+    },
+    internal: {
+      type: Boolean,
+      default: false,
+    },
+    link: {
+      type: String,
+      required: true,
+    },
+  },
+};
 </script>
 
 <template>
@@ -22,4 +33,12 @@ defineProps({
   >
 </template>
 
-<style></style>
+<style scoped>
+a {
+  transition: all 0.5s ease;
+}
+
+a:hover {
+  background-color: #4b6163;
+}
+</style>
