@@ -7,7 +7,7 @@ import ProjectCard from "../components/ProjectCard.vue";
   <main>
     <section class="projects-container flex justify-center items-center">
       <div
-        class="projects-inner w-1/2 flex items-center justify-center flex-wrap">
+        class="projects-inner w-1/2 flex items-center justify-center flex-wrap tablet:w-2/3">
         <ProjectCard
           v-for="(project, index) in projects"
           :key="index"
