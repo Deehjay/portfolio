@@ -12,6 +12,11 @@ module.exports = {
     fontFamily: {
       sans: ["Ubuntu", "sans-serif"],
     },
+    screens: {
+      laptop: { max: "1024px" },
+      tablet: { max: "768px" },
+      phone: { max: "480px" },
+    },
   },
   plugins: [],
 };
