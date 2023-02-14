@@ -161,4 +161,21 @@ export default {
   -webkit-transition-delay: 0.35s;
   transition-delay: 0.35s;
 }
+@media screen and (max-width: 1024px) {
+  .snip1577 {
+    min-width: 220px;
+    max-width: 230px;
+    min-height: 220px;
+    max-width: 230px;
+  }
+
+  .snip1577 h3,
+  .snip1577 h4 {
+    font-size: 1.3em;
+  }
+
+  .snip1577 h4 {
+    font-size: 0.75em;
+  }
+}
 </style>
