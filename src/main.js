@@ -25,6 +25,9 @@ const router = createRouter({
     },
     { path: "/contact", name: "Daniel James // Contact", component: Contact },
   ],
+  scrollBehavior() {
+    window.scrollTo(0, 0);
+  },
 });
 
 router.beforeEach((to, from, next) => {
