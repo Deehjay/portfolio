@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <!-- <main>
     <div class="container flex items-center justify-center gap-20">
       <div class="w-100">
         <img
@@ -60,7 +60,7 @@
         </div>
       </div>
     </div>
-  </main>
+  </main> -->
 </template>
 
 <style scoped>
