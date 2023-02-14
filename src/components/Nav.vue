@@ -1,5 +1,5 @@
 <template>
-  <nav class="p-10 tracking-wide">
+  <nav class="p-10 tracking-wider">
     <router-link
       class="hover-underline-animation text-neutralColour"
       to="/about"
@@ -13,7 +13,8 @@
     >
     <div class="name-accent-container">
       <router-link to="/"
-        ><span class="text-7xl font-sans font-bold name-accent glow"
+        ><span
+          class="text-7xl font-sans font-bold name-accent glow laptop:text-6xl"
           >D</span
         ></router-link
       >
@@ -95,5 +96,17 @@ nav .router-link-exact-active {
 .hover-underline-animation:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+@media screen and (max-width: 1024px) {
+  nav {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav {
+    font-size: 1.2rem;
+  }
 }
 </style>
