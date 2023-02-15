@@ -7,23 +7,43 @@ import About from "./views/About.vue";
 import Work from "./views/Work.vue";
 import SingleProject from "./components/SingleProject.vue";
 import Contact from "./views/Contact.vue";
+import { projects } from "./projects.js";
+
+const validProjectNames = [];
+
+for (let i = 0; i < projects.length; i++) {
+  validProjectNames.push(projects[i].slug);
+}
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
       path: "/",
-      name: "Daniel James // Nottingham, UK",
+      name: "Daniel James - Nottingham, UK",
       component: Home,
     },
-    { path: "/about", name: "Daniel James // About", component: About },
-    { path: "/work", name: "Daniel James // Work", component: Work },
+    { path: "/about", name: "Daniel James - About", component: About },
+    { path: "/work", name: "Daniel James - Work", component: Work },
     {
       path: "/work/:projectName",
-      name: "Daniel James // Project",
+      name: "Daniel James - Project",
       component: SingleProject,
+      beforeEnter: (to, from, next) => {
+        const projectName = to.params.projectName;
+        if (validProjectNames.includes(projectName)) {
+          next();
+        } else {
+          next("/");
+        }
+      },
     },
-    { path: "/contact", name: "Daniel James // Contact", component: Contact },
+    { path: "/contact", name: "Daniel James - Contact", component: Contact },
+    {
+      path: "/:pathMatch(.*)*",
+      redirect: "/",
+    },
+    { path: "/home", redirect: "/" },
   ],
   scrollBehavior() {
     window.scrollTo(0, 0);
@@ -37,7 +57,7 @@ router.beforeEach((to, from, next) => {
     .replace(/[-_]+/g, " ")
     .replace(/\b\w/g, (l) => l.toUpperCase())
     .trim();
-  document.title = `Daniel James // ${capitalised || "Nottingham, UK"}`;
+  document.title = `Daniel James - ${capitalised || "Nottingham, UK"}`;
   next();
 });
 
