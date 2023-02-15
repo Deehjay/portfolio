@@ -34,7 +34,6 @@ export default {
 
 <style scoped>
 .snip1577 {
-  font-family: "Montserrat", Arial, sans-serif;
   position: relative;
   display: inline-block;
   overflow: hidden;
@@ -48,6 +47,7 @@ export default {
   text-align: left;
   font-size: 16px;
   background: rgba(0, 0, 0, 0);
+  margin-right: 30px;
 }
 
 .snip1577 *,
@@ -161,12 +161,13 @@ export default {
   -webkit-transition-delay: 0.35s;
   transition-delay: 0.35s;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1280px) {
   .snip1577 {
     min-width: 220px;
     max-width: 230px;
     min-height: 220px;
     max-width: 230px;
+    margin-right: 0px;
   }
 
   .snip1577 h3,
