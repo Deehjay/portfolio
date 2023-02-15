@@ -22,7 +22,8 @@ export default {
     <section
       class="landing flex flex-wrap items-center justify-center p-2 z-1 relative">
       <header>
-        <h1 class="text-7xl font-sans font-bold laptop:text-5xl phone:text-3xl">
+        <h1
+          class="text-7xl font-sans font-bold laptop:text-5xl phone:text-3xl laptoplg:text-5xl">
           <span class="line block w-full">
             Hi!
             <i
@@ -38,10 +39,13 @@ export default {
           <span class="line block w-full"> Junior Software Developer </span>
         </h1>
         <div class="call-to-action">
-          <p class="mt-3 mb-3 laptop:text-xl mb-5">
+          <p class="mt-3 mb-3 laptop:text-xl">
             Full Stack Developer // Nottingham, UK
           </p>
-          <Button text="Hire me" :internal="true" link="/contact" />
+          <div class="flex gap-4">
+            <Button text="Hire me" :internal="true" link="/contact" />
+            <Button text="My projects" :internal="true" link="/work" />
+          </div>
         </div>
       </header>
     </section>
@@ -128,6 +132,20 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
+  .line {
+    height: 50px;
+  }
+
+  header {
+    max-width: 620px;
+  }
+
+  .call-to-action {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1280px) {
   .line {
     height: 50px;
   }

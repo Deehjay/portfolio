@@ -87,7 +87,14 @@ export default {
       {{ modalMessage }}
     </div>
 
-    <section class="contact-container flex justify-center items-center">
+    <section
+      class="contact-container flex flex-col justify-center items-center gap-20 phone:gap-4">
+      <div>
+        <h1
+          class="text-5xl font-sans font-bold uppercase tracking-wider phone:mt-4">
+          <span class="name-accent">C</span>ontact Me
+        </h1>
+      </div>
       <div
         class="w-3/4 flex justify-center items-center gap-52 laptop:w-full gap-32 tablet:gap-4 phone:w-full p-4 phone:flex-col phone:gap-12">
         <div
@@ -158,7 +165,7 @@ export default {
             </p>
             <button
               :disabled="buttonIsDisabled"
-              class="self-center submit-button text-white bg-gray-600 p-2 uppercase text-lg drop-shadow-lg"
+              class="self-center submit-button text-white bg-gray-600 p-2 uppercase text-lg drop-shadow-lg rounded"
               type="submit"
               @click="handleSubmit">
               <i v-if="isLoading" class="fa fa-circle-o-notch fa-spin"></i>
@@ -244,6 +251,11 @@ export default {
 button {
   margin-top: 1em;
   color: white;
+  transition: all 0.5s ease;
+}
+
+button:hover {
+  background-color: #68cc8c;
 }
 
 .icon {
@@ -282,14 +294,14 @@ textarea:focus {
 }
 
 .content-left {
-  animation: slideInFromLeft 0.8s;
+  animation: slideInFromLeft 0.5s;
 }
 
 .content-right {
   opacity: 0;
-  animation: slideInFromRight 0.8s;
+  animation: slideInFromRight 0.5s;
   animation-fill-mode: forwards;
-  animation-delay: 0.5s;
+  animation-delay: 0.3s;
 }
 
 #projects-link {
