@@ -28,7 +28,7 @@ export default {
 <template>
   <router-link
     @click.native="$scrollBehaviour"
-    class="text-white bg-gray-600 p-4 uppercase text-center drop-shadow-lg"
+    class="text-white bg-gray-600 p-4 uppercase text-center drop-shadow-lg rounded"
     :to="`/work/${nextProject}`"
     >Next Project</router-link
   >
