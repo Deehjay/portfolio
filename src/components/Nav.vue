@@ -44,8 +44,6 @@ nav {
   text-transform: uppercase;
   animation: fadeIn 0.8s;
   font-size: 1.3rem;
-
-  border-bottom: 1px solid black;
 }
 
 #nav-2nd-child {
