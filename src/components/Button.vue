@@ -21,13 +21,13 @@ export default {
   <router-link
     v-if="internal"
     :to="link"
-    class="text-white bg-gray-600 p-4 uppercase text-center drop-shadow-lg">
+    class="text-white bg-gray-600 p-4 uppercase text-center drop-shadow-lg text-xl rounded laptoplg:text-lg laptoplg:p-2">
     {{ text }}</router-link
   >
   <a
     v-else
     :href="link"
-    class="text-white bg-gray-600 p-4 text-center uppercase drop-shadow-lg"
+    class="text-white bg-gray-600 p-3 text-center uppercase drop-shadow-lg rounded"
     target="_blank"
     >{{ text }}</a
   >
@@ -39,6 +39,6 @@ a {
 }
 
 a:hover {
-  background-color: #4b6163;
+  background-color: #68cc8c;
 }
 </style>
