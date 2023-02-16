@@ -1,18 +1,20 @@
 <template>
   <nav class="p-10 tracking-wider">
     <router-link
+      aria-label="About page"
       class="hover-underline-animation text-neutralColour"
       to="/about"
       >About</router-link
     >
     <router-link
+      aria-label="Projects page"
       class="hover-underline-animation text-neutralColour"
       id="nav-2nd-child"
       to="/work"
       >Work</router-link
     >
     <div class="name-accent-container">
-      <router-link to="/"
+      <router-link to="/" aria-label="Home page"
         ><span
           class="text-7xl font-sans font-bold name-accent glow laptop:text-6xl"
           >D</span
@@ -21,11 +23,13 @@
     </div>
 
     <router-link
+      aria-label="Contact page"
       class="hover-underline-animation text-neutralColour"
       to="/contact"
       >Contact</router-link
     >
     <a
+      aria-label="My CV"
       class="hover-underline-animation text-neutralColour"
       href="/CV/Daniel-James-CV.pdf"
       target="_blank"
@@ -44,6 +48,10 @@ nav {
   text-transform: uppercase;
   animation: fadeIn 0.8s;
   font-size: 1.3rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #ecf3f3;
 }
 
 #nav-2nd-child {
