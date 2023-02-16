@@ -22,8 +22,7 @@ export default {
     <section
       class="landing flex flex-wrap items-center justify-center p-2 z-1 relative">
       <header>
-        <h1
-          class="intro-header text-7xl font-sans font-bold laptop:text-5xl laptoplg:text-5xl">
+        <h1 class="intro-header text-7xl font-sans font-bold laptop:text-5xl">
           <span class="line block w-full">
             Hi!
             <i

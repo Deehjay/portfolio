@@ -13,8 +13,9 @@ module.exports = {
       sans: ["Ubuntu", "sans-serif"],
     },
     screens: {
-      laptoplg: { max: "1280px" },
-      laptop: { max: "1024px" },
+      // macbook: { max: "2880px" },
+      // laptoplg: { max: "1280px" },
+      laptop: { min: "1024px", max: "2880px" },
       tablet: { max: "768px" },
       phone: { max: "480px" },
     },
