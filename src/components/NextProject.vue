@@ -33,3 +33,14 @@ export default {
     >Next Project</router-link
   >
 </template>
+
+<style scoped>
+a {
+  transition: all 0.5s ease;
+}
+
+a:hover {
+  background-color: #68cc8c;
+  color: #333d4d;
+}
+</style>
