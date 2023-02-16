@@ -21,7 +21,7 @@ export default {
   <router-link
     v-if="internal"
     :to="link"
-    class="text-white bg-gray-600 p-4 uppercase text-center drop-shadow-lg text-xl rounded laptoplg:text-lg laptoplg:p-2 phone:text-base">
+    class="text-white bg-gray-600 p-4 uppercase text-center drop-shadow-lg text-xl rounded laptop:text-lg laptop:p-3phone:text-base">
     {{ text }}</router-link
   >
   <a

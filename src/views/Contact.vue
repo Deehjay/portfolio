@@ -91,12 +91,12 @@ export default {
       class="contact-container flex flex-col justify-center items-center gap-12 phone:gap-4">
       <div>
         <h1
-          class="header-fadein text-5xl font-sans font-bold uppercase tracking-wider phone:mt-4 laptoplg:mt-4">
+          class="header-fadein text-5xl font-sans font-bold uppercase tracking-wider phone:mt-4 laptop:mt-4">
           <span class="name-accent">C</span>ontact Me
         </h1>
       </div>
       <div
-        class="w-3/4 flex justify-center items-center gap-52 laptop:w-full laptoplg:w-full gap-32 tablet:gap-4 phone:w-full p-4 phone:flex-col phone:gap-12">
+        class="w-3/4 flex justify-center items-center gap-52 laptop:w-full laptop:gap-8 tablet:gap-4 phone:w-full p-4 phone:flex-col phone:gap-12">
         <div
           class="content-left w-1/3 flex flex-col gap-10 items-start tablet:w-1/2 phone:w-full phone:gap-4 phone:items-center phone:text-center">
           <div class="">
@@ -143,8 +143,7 @@ export default {
             </div>
           </div>
         </div>
-        <div
-          class="content-right w-1/4 laptop:w-1/3 laptoplg:w-1/3 tablet:w-1/3 phone:w-full">
+        <div class="content-right w-1/4 laptop:w-1/4 tablet:w-1/3 phone:w-full">
           <h4
             class="mb-6 text-3xl font-bold laptop:text-xl laptoplg:text-xl tablet:text-xl">
             Send me a message! 📫

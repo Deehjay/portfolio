@@ -38,7 +38,7 @@ export default {
           <span class="line block w-full"> Junior Software Developer </span>
         </h1>
         <div class="call-to-action">
-          <p class="mt-3 mb-3 laptop:text-xl laptoplg:text-xl phone:text-lg">
+          <p class="mt-3 mb-3 laptop:text-xl phone:text-lg">
             Full Stack Developer // Nottingham, UK
           </p>
           <div class="flex gap-4">

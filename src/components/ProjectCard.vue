@@ -49,7 +49,7 @@ export default {
   text-align: left;
   font-size: 16px;
   background: rgba(0, 0, 0, 0);
-  margin-right: 30px;
+  margin-right: 1rem;
 }
 
 .snip1577 *,
@@ -170,6 +170,24 @@ export default {
     min-height: 220px;
     max-width: 230px;
     margin-right: 0px;
+  }
+
+  .snip1577 h3,
+  .snip1577 h4 {
+    font-size: 1.3em;
+  }
+
+  .snip1577 h4 {
+    font-size: 0.75em;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .snip1577 {
+    min-width: 250px;
+    max-width: 260px;
+    min-height: 250px;
+    max-width: 260px;
   }
 
   .snip1577 h3,

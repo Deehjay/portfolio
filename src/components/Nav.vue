@@ -104,7 +104,7 @@ nav .router-link-exact-active {
   transform-origin: bottom left;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1600px) {
   nav {
     font-size: 1rem;
   }

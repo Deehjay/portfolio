@@ -58,27 +58,27 @@ export default {
         <div class="content-right w-1/3 flex flex-col items-center gap-8">
           <div class="w-full bg-gray-200 p-4 rounded">
             <h1
-              class="text-emerald mb-4 w-full uppercase text-center text-5xl font-bold tracking-wider laptop:text-3xl laptoplg:text-3xl phone:text-2xl">
+              class="text-emerald mb-4 w-full uppercase text-center text-5xl font-bold tracking-wider laptop:text-3xl phone:text-2xl">
               {{ projectDetails.projectName }}
             </h1>
             <div>
               <div class="flex gap-8 justify-center phone:gap-4">
                 <div v-for="tech in projectDetails.tech" class="tooltip">
                   <i
-                    :class="`devicon-${tech}-plain devicon-${tech}-original text-5xl text-neutralColour laptop:text-3xl laptoplg:text-3xl phone:text-2xl`"></i>
+                    :class="`devicon-${tech}-plain devicon-${tech}-original text-5xl text-neutralColour laptop:text-3xl phone:text-2xl`"></i>
                   <span class="tooltiptext">{{ tech }}</span>
                 </div>
               </div>
             </div>
           </div>
           <h2
-            class="text-xl italic text-gray-400 font-bold laptop:text-lg laptoplg:text-lg phone:text-base text-center">
+            class="text-xl italic text-gray-400 font-bold laptop:text-lg phone:text-base text-center">
             {{ projectDetails.summary }}
           </h2>
-          <p class="text-lg text-justify laptop:text-base laptoplg:text-base">
+          <p class="text-lg text-justify laptop:text-base">
             {{ projectDetails.longDescriptionP1 }}
           </p>
-          <p class="text-lg text-justify laptop:text-base laptoplg:text-base">
+          <p class="text-lg text-justify laptop:text-base">
             {{ projectDetails.longDescriptionP2 }}
           </p>
 
@@ -157,35 +157,7 @@ export default {
   visibility: visible;
 }
 
-@media screen and (max-width: 1024px) {
-  .project-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-  }
-
-  .project-container {
-    height: 100%;
-    overflow: visible;
-    padding: 1rem;
-  }
-
-  .content-left {
-    width: 50%;
-  }
-
-  #test {
-    height: 400px !important;
-  }
-
-  .content-right {
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 1024px) and (max-width: 1600px) {
   .project-inner {
     display: flex;
     flex-direction: column;
