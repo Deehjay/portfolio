@@ -28,7 +28,9 @@ export default {
       <h3>{{ projectName }}</h3>
       <h4>{{ cardHeading }}</h4>
     </figcaption>
-    <router-link :to="`/work/${slug}`"></router-link>
+    <router-link
+      :to="`/work/${slug}`"
+      :aria-label="`Learn more about my ${projectName} project`"></router-link>
   </figure>
 </template>
 
