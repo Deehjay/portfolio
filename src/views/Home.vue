@@ -130,21 +130,7 @@ body {
   background: #ecf3f3;
 }
 
-@media screen and (max-width: 1024px) {
-  .line {
-    height: 50px;
-  }
-
-  header {
-    max-width: 620px;
-  }
-
-  .call-to-action {
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 1024px) and (max-width: 1600px) {
   .line {
     height: 50px;
   }
