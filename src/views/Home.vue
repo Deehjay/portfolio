@@ -23,13 +23,13 @@ export default {
       class="landing flex flex-wrap items-center justify-center p-2 z-1 relative">
       <header>
         <h1
-          class="text-7xl font-sans font-bold laptop:text-5xl phone:text-3xl laptoplg:text-5xl">
+          class="intro-header text-7xl font-sans font-bold laptop:text-5xl laptoplg:text-5xl">
           <span class="line block w-full">
             Hi!
             <i
               id="wave"
               class="em-svg em-wave"
-              aria-role="presentation"
+              role="img"
               aria-label="WAVING HAND SIGN"></i>
             <!-- <span id="wave" class="">👋</span> -->
           </span>
@@ -39,7 +39,7 @@ export default {
           <span class="line block w-full"> Junior Software Developer </span>
         </h1>
         <div class="call-to-action">
-          <p class="mt-3 mb-3 laptop:text-xl">
+          <p class="mt-3 mb-3 laptop:text-xl laptoplg:text-xl phone:text-lg">
             Full Stack Developer // Nottingham, UK
           </p>
           <div class="flex gap-4">
@@ -156,6 +156,25 @@ body {
 
   .call-to-action {
     font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .line {
+    height: 35px;
+  }
+
+  header {
+    padding: 4px;
+    max-width: 620px;
+  }
+
+  .call-to-action {
+    font-size: 1rem;
+  }
+
+  .intro-header {
+    font-size: 1.6rem;
   }
 }
 
