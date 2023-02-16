@@ -182,7 +182,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (min-width: 1300px) and (max-width: 1600px) {
   .snip1577 {
     min-width: 300px;
     max-width: 310px;
