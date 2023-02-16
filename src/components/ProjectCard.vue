@@ -184,19 +184,19 @@ export default {
 
 @media screen and (max-width: 1600px) {
   .snip1577 {
-    min-width: 250px;
-    max-width: 260px;
-    min-height: 250px;
-    max-width: 260px;
+    min-width: 300px;
+    max-width: 310px;
+    min-height: 300px;
+    max-width: 310px;
   }
 
   .snip1577 h3,
   .snip1577 h4 {
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
 
   .snip1577 h4 {
-    font-size: 0.75em;
+    font-size: 1em;
   }
 }
 </style>
