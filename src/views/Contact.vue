@@ -88,23 +88,25 @@ export default {
     </div>
 
     <section
-      class="contact-container flex flex-col justify-center items-center gap-20 phone:gap-4">
+      class="contact-container flex flex-col justify-center items-center gap-12 phone:gap-4">
       <div>
         <h1
-          class="text-5xl font-sans font-bold uppercase tracking-wider phone:mt-4">
+          class="header-fadein text-5xl font-sans font-bold uppercase tracking-wider phone:mt-4 laptoplg:mt-4">
           <span class="name-accent">C</span>ontact Me
         </h1>
       </div>
       <div
-        class="w-3/4 flex justify-center items-center gap-52 laptop:w-full gap-32 tablet:gap-4 phone:w-full p-4 phone:flex-col phone:gap-12">
+        class="w-3/4 flex justify-center items-center gap-52 laptop:w-full laptoplg:w-full gap-32 tablet:gap-4 phone:w-full p-4 phone:flex-col phone:gap-12">
         <div
           class="content-left w-1/3 flex flex-col gap-10 items-start tablet:w-1/2 phone:w-full phone:gap-4 phone:items-center phone:text-center">
           <div class="">
-            <h2 class="text-4xl font-bold text-neutral mb-2 laptop:text-2xl">
+            <h2
+              class="text-4xl font-bold text-neutral mb-2 laptop:text-2xl laptoplg:text-2xl">
               I'm currently looking for a <br />
               <span id="role-accent">Junior Developer</span> role 🧑‍💻
             </h2>
-            <p class="text-neutral-400 text-2xl laptop:text-lg">
+            <p
+              class="text-neutral-400 text-2xl laptop:text-lg laptoplg:text-lg">
               Check out some of my
               <router-link id="projects-link" class="underline" to="/work"
                 >projects</router-link
@@ -112,10 +114,12 @@ export default {
             </p>
           </div>
           <div>
-            <h2 class="text-3xl font-bold text-neutral laptop:text-xl">
+            <h3
+              class="text-3xl font-bold text-neutral laptop:text-xl laptoplg:text-xl">
               Get in touch,<br />and let's have a chat!
-            </h2>
-            <p class="text-neutral-400 text-xl laptop:text-base">
+            </h3>
+            <p
+              class="text-neutral-400 text-xl laptop:text-base laptoplg:text-base">
               Even if it's just about OldSchool RuneScape ⚔️
             </p>
           </div>
@@ -123,13 +127,15 @@ export default {
           <div class="">
             <div class="flex gap-5 items-center justify-center">
               <a
-                class="social-icon bg-neutralColour p-2 w-20 text-center laptop:w-16 tablet:w-14 phone:w-12"
+                aria-label="My GitHub profile"
+                class="social-icon bg-neutralColour p-2 w-20 text-center laptop:w-16 laptoplg:w-16 tablet:w-14 phone:w-12"
                 href="https://github.com/Deehjay"
                 target="_blank"
                 ><i class="icon devicon-github-original"></i
               ></a>
               <a
-                class="social-icon bg-neutralColour p-2 w-20 text-center laptop:w-16 tablet:w-12"
+                aria-label="My LinkedIn Profile"
+                class="social-icon bg-neutralColour p-2 w-20 text-center laptop:w-16 laptoplg:w-16 tablet:w-12"
                 href="https://www.linkedin.com/in/daniel-james-6a9928173/"
                 target="_blank"
                 ><i class="icon devicon-linkedin-plain"></i
@@ -137,10 +143,12 @@ export default {
             </div>
           </div>
         </div>
-        <div class="content-right w-1/4 laptop:w-1/3 tablet:w-1/3 phone:w-full">
-          <h1 class="mb-6 text-3xl font-bold laptop:text-2xl tablet:text-xl">
+        <div
+          class="content-right w-1/4 laptop:w-1/3 laptoplg:w-1/3 tablet:w-1/3 phone:w-full">
+          <h4
+            class="mb-6 text-3xl font-bold laptop:text-xl laptoplg:text-xl tablet:text-xl">
             Send me a message! 📫
-          </h1>
+          </h4>
           <form ref="contactForm" action="" class="flex flex-col gap-2">
             <input type="text" ref="name" placeholder="Full name*" />
             <p v-if="formErrors.name" class="error-message">
@@ -179,6 +187,12 @@ export default {
 </template>
 
 <style scoped>
+.header-fadein {
+  opacity: 0;
+  animation: fadeIn 0.7s;
+  animation-delay: 0.7s;
+  animation-fill-mode: forwards;
+}
 .modal {
   position: absolute;
   top: 50%;
@@ -256,6 +270,7 @@ button {
 
 button:hover {
   background-color: #68cc8c;
+  color: #333d4d;
 }
 
 .icon {
@@ -263,8 +278,8 @@ button:hover {
 }
 
 .contact-container {
-  height: 91vh;
-  max-height: 91vh;
+  height: 88vh;
+  max-height: 88vh;
 }
 
 .submit-button {
@@ -335,6 +350,17 @@ textarea:focus {
     to {
       background-position: var(--bg-size) 0;
     }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .contact-container {
+    height: 100%;
+    max-height: 100%;
+  }
+
+  h1 {
+    margin-top: 1rem;
   }
 }
 
