@@ -7,17 +7,14 @@ module.exports = {
         neutralColour: "#333d4d",
         emerald: "#68cc8c",
         secondary: "#377cfb",
-        contrast: "#F0F0F0",
       },
     },
     fontFamily: {
       sans: ["Ubuntu", "sans-serif"],
     },
     screens: {
-      // macbook: { max: "2880px" },
-      // laptoplg: { max: "1280px" },
       laptop: { min: "1024px", max: "1600px" },
-      tablet: { max: "768px" },
+      tablet: { max: "820px" },
       phone: { max: "480px" },
     },
   },
