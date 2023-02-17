@@ -9,12 +9,12 @@ import ProjectCard from "../components/ProjectCard.vue";
       class="projects-container flex flex-col justify-center items-center gap-12 phone:gap-4">
       <div>
         <h1
-          class="header-fadein text-5xl font-sans font-bold uppercase tracking-wider phone:mt-4 text-5xl phone:ml-4 laptop:text-4xl">
+          class="header-fadein text-5xl font-sans font-bold uppercase tracking-wider phone:mt-4 laptop:text-4xl tablet:text-4xl">
           <span class="name-accent">P</span>rojects
         </h1>
       </div>
       <div
-        class="projects-inner w-1/2 flex items-center justify-center flex-wrap tablet:w-2/3">
+        class="projects-inner w-1/2 flex items-center justify-center flex-wrap tablet:w-3/4">
         <ProjectCard
           v-for="(project, index) in projects"
           :key="index"
@@ -35,7 +35,7 @@ import ProjectCard from "../components/ProjectCard.vue";
   animation-fill-mode: forwards;
 }
 .projects-container {
-  height: 88vh;
+  height: 90vh;
 }
 
 .projects-inner {
@@ -48,12 +48,6 @@ import ProjectCard from "../components/ProjectCard.vue";
 @media screen and (max-width: 480px) {
   .projects-container {
     height: 100%;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  h1 {
-    margin-top: 1rem;
   }
 }
 </style>

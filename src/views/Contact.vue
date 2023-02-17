@@ -88,25 +88,24 @@ export default {
     </div>
 
     <section
-      class="contact-container flex flex-col justify-center items-center gap-12 phone:gap-4">
+      class="contact-container flex flex-col justify-center items-center gap-12 phone:gap-4 tablet:gap-4">
       <div>
         <h1
-          class="header-fadein text-5xl font-sans font-bold uppercase tracking-wider phone:mt-4 laptop:text-4xl">
+          class="header-fadein text-5xl font-sans font-bold uppercase tracking-wider laptop:text-4xl laptop:mt-6 tablet:mt-4 tablet:text-4xl">
           <span class="name-accent">C</span>ontact Me
         </h1>
       </div>
       <div
-        class="w-3/4 flex justify-center items-center gap-52 laptop:w-full laptop:gap-8 tablet:gap-4 phone:w-full p-4 phone:flex-col phone:gap-12">
+        class="w-3/4 flex justify-center items-center gap-52 laptop:w-full laptop:gap-8 tablet:gap-4 phone:w-full p-4 phone:flex-col phone:gap-12 tablet:w-full tablet:flex-col tablet:gap-12">
         <div
-          class="content-left w-1/3 flex flex-col gap-10 items-start tablet:w-1/2 phone:w-full phone:gap-4 phone:items-center phone:text-center">
+          class="content-left w-1/3 flex flex-col gap-10 items-start tablet:w-1/2 phone:w-full phone:gap-4 phone:items-center phone:text-center tablet:items-center tablet:text-center tablet:w-full">
           <div class="">
             <h2
-              class="text-4xl font-bold text-neutral mb-2 laptop:text-2xl laptoplg:text-2xl">
+              class="text-4xl font-bold text-neutral mb-2 laptop:text-2xl tablet:text-2xl">
               I'm currently looking for a <br />
               <span id="role-accent">Junior Developer</span> role 🧑‍💻
             </h2>
-            <p
-              class="text-neutral-400 text-2xl laptop:text-lg laptoplg:text-lg">
+            <p class="text-neutral-400 text-2xl laptop:text-lg tablet:text-lg">
               Check out some of my
               <router-link id="projects-link" class="underline" to="/work"
                 >projects</router-link
@@ -115,11 +114,11 @@ export default {
           </div>
           <div>
             <h3
-              class="text-3xl font-bold text-neutral laptop:text-xl laptoplg:text-xl">
+              class="text-3xl font-bold text-neutral laptop:text-xl tablet:text-xl">
               Get in touch,<br />and let's have a chat!
             </h3>
             <p
-              class="text-neutral-400 text-xl laptop:text-base laptoplg:text-base">
+              class="text-neutral-400 text-xl laptop:text-base tablet:text-base">
               Even if it's just about OldSchool RuneScape ⚔️
             </p>
           </div>
@@ -128,14 +127,14 @@ export default {
             <div class="flex gap-5 items-center justify-center">
               <a
                 aria-label="My GitHub profile"
-                class="social-icon bg-neutralColour p-2 w-20 text-center laptop:w-16 laptoplg:w-16 tablet:w-14 phone:w-12"
+                class="social-icon bg-neutralColour p-2 w-20 text-center laptop:w-16 tablet:w-14 phone:w-12"
                 href="https://github.com/Deehjay"
                 target="_blank"
                 ><i class="icon devicon-github-original"></i
               ></a>
               <a
                 aria-label="My LinkedIn Profile"
-                class="social-icon bg-neutralColour p-2 w-20 text-center laptop:w-16 laptoplg:w-16 tablet:w-12"
+                class="social-icon bg-neutralColour p-2 w-20 text-center laptop:w-16 tablet:w-14"
                 href="https://www.linkedin.com/in/daniel-james-6a9928173/"
                 target="_blank"
                 ><i class="icon devicon-linkedin-plain"></i
@@ -143,9 +142,8 @@ export default {
             </div>
           </div>
         </div>
-        <div class="content-right w-1/4 laptop:w-1/4 tablet:w-1/3 phone:w-full">
-          <h4
-            class="mb-6 text-3xl font-bold laptop:text-xl laptoplg:text-xl tablet:text-xl">
+        <div class="content-right w-1/3 laptop:w-1/4 tablet:w-1/2 phone:w-full">
+          <h4 class="mb-6 text-3xl font-bold laptop:text-xl tablet:text-xl">
             Send me a message! 📫
           </h4>
           <form ref="contactForm" action="" class="flex flex-col gap-2">
@@ -307,7 +305,9 @@ textarea:focus {
 }
 
 .content-left {
+  opacity: 0;
   animation: slideInFromLeft 0.5s;
+  animation-fill-mode: forwards;
 }
 
 .content-right {
@@ -356,10 +356,6 @@ textarea:focus {
     height: 100%;
     max-height: 100%;
   }
-
-  h1 {
-    margin-top: 2.4rem;
-  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -388,6 +384,10 @@ textarea:focus {
 
   .social-icon[data-v-337105ab] {
     font-size: 1.2rem;
+  }
+
+  .modal {
+    width: 70%;
   }
 }
 </style>

@@ -14,6 +14,9 @@ export default {
 </script>
 
 <template>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
   <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet" />
   <main>
     <div id="particle-container" class="z-0">
@@ -22,7 +25,8 @@ export default {
     <section
       class="landing flex flex-wrap items-center justify-center p-2 z-1 relative">
       <header>
-        <h1 class="intro-header text-7xl font-sans font-bold laptop:text-5xl">
+        <h1
+          class="intro-header text-7xl font-sans font-bold laptop:text-5xl tablet:text-5xl">
           <span class="line block w-full">
             Hi!
             <i
@@ -37,10 +41,27 @@ export default {
           </span>
           <span class="line block w-full"> Junior Software Developer </span>
         </h1>
-        <div class="call-to-action">
-          <p class="mt-3 mb-3 laptop:text-xl phone:text-lg">
-            Full Stack Developer // Nottingham, UK
-          </p>
+        <div class="call-to-action flex flex-col">
+          <div>
+            <p
+              class="mt-3 laptop:text-xl phone:text-lg tablet:text-2xl phone:mt-1">
+              Full Stack Developer // Nottingham, UK
+            </p>
+            <div class="flex gap-2">
+              <a
+                aria-label="My GitHub profile"
+                href="https://github.com/Deehjay"
+                ><i
+                  class="social-icon devicon-github-original text-5xl laptop:text-3xl phone:text-3xl"></i
+              ></a>
+              <a
+                aria-label="My LinkedIn profile"
+                href="https://www.linkedin.com/in/daniel-james-6a9928173/"
+                ><i
+                  class="social-icon devicon-linkedin-plain text-5xl laptop:text-3xl phone:text-3xl"></i
+              ></a>
+            </div>
+          </div>
           <div class="flex gap-4">
             <Button text="My projects" :internal="true" link="/work" />
             <Button text="Hire me" :internal="true" link="/contact" />
@@ -130,6 +151,14 @@ body {
   background: #ecf3f3;
 }
 
+.social-icon {
+  transition: all 0.5s ease;
+}
+
+.social-icon:hover {
+  color: #68cc8c;
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1600px) {
   .line {
     height: 50px;
@@ -144,14 +173,33 @@ body {
   }
 }
 
+@media screen and (max-width: 820px) {
+  .line {
+    height: 50px;
+  }
+
+  header {
+    max-width: 620px;
+  }
+
+  .call-to-action {
+    font-size: 1rem;
+  }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+}
+
 @media screen and (max-width: 480px) {
   .line {
-    height: 35px;
+    height: 30px;
   }
 
   header {
     padding: 4px;
-    max-width: 620px;
+    max-width: 340px;
   }
 
   .call-to-action {
@@ -161,11 +209,6 @@ body {
   .intro-header {
     font-size: 1.6rem;
   }
-}
-
-.particle {
-  position: absolute;
-  border-radius: 50%;
 }
 
 @-webkit-keyframes particle-animation-1 {
