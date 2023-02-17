@@ -45,9 +45,6 @@ const router = createRouter({
     },
     { path: "/home", redirect: "/" },
   ],
-  scrollBehavior() {
-    window.scrollTo(0, 0);
-  },
 });
 
 router.beforeEach((to, from, next) => {
