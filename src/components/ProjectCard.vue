@@ -165,11 +165,11 @@ export default {
 }
 @media screen and (max-width: 1280px) {
   .snip1577 {
-    min-width: 220px;
-    max-width: 230px;
-    min-height: 220px;
-    max-width: 230px;
-    margin-right: 0px;
+    min-width: 250px;
+    max-width: 260px;
+    min-height: 250px;
+    max-width: 260px;
+    margin-right: 1rem;
   }
 
   .snip1577 h3,
@@ -197,6 +197,25 @@ export default {
 
   .snip1577 h4 {
     font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .snip1577 {
+    min-width: 240px;
+    max-width: 250px;
+    min-height: 240px;
+    max-width: 250px;
+    margin-right: 1rem;
+  }
+
+  .snip1577 h3,
+  .snip1577 h4 {
+    font-size: 1.3em;
+  }
+
+  .snip1577 h4 {
+    font-size: 0.75em;
   }
 }
 </style>

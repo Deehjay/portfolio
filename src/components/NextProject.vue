@@ -22,13 +22,18 @@ export default {
         .trim();
     },
   },
+  methods: {
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
+  },
 };
 </script>
 
 <template>
   <router-link
-    @click.native="$scrollBehaviour"
-    class="text-white bg-gray-600 p-4 uppercase text-center drop-shadow-lg rounded"
+    @click.native="scrollToTop"
+    class="text-white bg-gray-600 p-4 uppercase text-center drop-shadow-lg rounded text-xl laptop:text-base laptop:p-3 phone:text-base phone:p-2 tablet:text-base"
     :to="`/work/${nextProject}`"
     >Next Project</router-link
   >

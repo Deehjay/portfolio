@@ -56,7 +56,7 @@ export default {
           </div>
         </div>
         <div class="content-right w-1/3 flex flex-col items-center gap-8">
-          <div class="w-full bg-contrast p-4 rounded">
+          <div class="w-full bg-gray-100 p-4 rounded">
             <h1
               class="text-emerald mb-4 w-full uppercase text-center text-5xl font-bold tracking-wider laptop:text-3xl phone:text-2xl">
               {{ projectDetails.projectName }}
@@ -157,7 +157,7 @@ export default {
   visibility: visible;
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1600px) {
+@media screen and (min-width: 768px) and (max-width: 1600px) {
   .project-inner {
     display: flex;
     flex-direction: column;

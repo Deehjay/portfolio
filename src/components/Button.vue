@@ -21,13 +21,13 @@ export default {
   <router-link
     v-if="internal"
     :to="link"
-    class="text-white bg-gray-600 p-4 uppercase text-center drop-shadow-lg text-xl rounded laptop:text-lg laptop:p-3phone:text-base">
+    class="text-white bg-gray-600 p-4 uppercase text-center drop-shadow-lg rounded text-xl laptop:text-base laptop:p-3 phone:text-base phone:p-2 tablet:text-base">
     {{ text }}</router-link
   >
   <a
     v-else
     :href="link"
-    class="text-white bg-gray-600 p-3 text-center uppercase drop-shadow-lg rounded phone:text-base"
+    class="text-white bg-gray-600 p-3 text-center uppercase drop-shadow-lg rounded text-xl laptop:text-base laptop:p-3 phone:text-base phone:p-2 tablet:text-base"
     target="_blank"
     >{{ text }}</a
   >
