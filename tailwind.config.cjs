@@ -7,6 +7,7 @@ module.exports = {
         neutralColour: "#333d4d",
         emerald: "#68cc8c",
         secondary: "#377cfb",
+        contrast: "#F0F0F0",
       },
     },
     fontFamily: {
