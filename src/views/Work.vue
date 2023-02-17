@@ -9,7 +9,7 @@ import ProjectCard from "../components/ProjectCard.vue";
       class="projects-container flex flex-col justify-center items-center gap-12 phone:gap-4">
       <div>
         <h1
-          class="header-fadein text-5xl font-sans font-bold uppercase tracking-wider phone:mt-4 text-5xl phone:ml-4">
+          class="header-fadein text-5xl font-sans font-bold uppercase tracking-wider phone:mt-4 text-5xl phone:ml-4 laptop:text-4xl">
           <span class="name-accent">P</span>rojects
         </h1>
       </div>

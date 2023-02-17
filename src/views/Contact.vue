@@ -91,7 +91,7 @@ export default {
       class="contact-container flex flex-col justify-center items-center gap-12 phone:gap-4">
       <div>
         <h1
-          class="header-fadein text-5xl font-sans font-bold uppercase tracking-wider phone:mt-4 laptop:mt-4">
+          class="header-fadein text-5xl font-sans font-bold uppercase tracking-wider phone:mt-4 laptop:text-4xl">
           <span class="name-accent">C</span>ontact Me
         </h1>
       </div>
@@ -176,7 +176,7 @@ export default {
               type="submit"
               @click="handleSubmit">
               <i v-if="isLoading" class="fa fa-circle-o-notch fa-spin"></i>
-              {{ isLoading ? null : "Send message" }}
+              {{ isLoading ? null : "Send" }}
             </button>
           </form>
         </div>
@@ -277,8 +277,7 @@ button:hover {
 }
 
 .contact-container {
-  height: 88vh;
-  max-height: 88vh;
+  height: 90vh;
 }
 
 .submit-button {
@@ -359,7 +358,7 @@ textarea:focus {
   }
 
   h1 {
-    margin-top: 1rem;
+    margin-top: 2.4rem;
   }
 }
 

@@ -42,8 +42,8 @@ export default {
             Full Stack Developer // Nottingham, UK
           </p>
           <div class="flex gap-4">
-            <Button text="Hire me" :internal="true" link="/contact" />
             <Button text="My projects" :internal="true" link="/work" />
+            <Button text="Hire me" :internal="true" link="/contact" />
           </div>
         </div>
       </header>

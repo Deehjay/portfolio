@@ -56,7 +56,7 @@ export default {
           </div>
         </div>
         <div class="content-right w-1/3 flex flex-col items-center gap-8">
-          <div class="w-full bg-gray-200 p-4 rounded">
+          <div class="w-full bg-contrast p-4 rounded">
             <h1
               class="text-emerald mb-4 w-full uppercase text-center text-5xl font-bold tracking-wider laptop:text-3xl phone:text-2xl">
               {{ projectDetails.projectName }}
@@ -75,10 +75,10 @@ export default {
             class="text-xl italic text-gray-400 font-bold laptop:text-lg phone:text-base text-center">
             {{ projectDetails.summary }}
           </h2>
-          <p class="text-lg text-justify laptop:text-base">
+          <p class="text-lg text-left laptop:text-base">
             {{ projectDetails.longDescriptionP1 }}
           </p>
-          <p class="text-lg text-justify laptop:text-base">
+          <p class="text-lg text-left laptop:text-base">
             {{ projectDetails.longDescriptionP2 }}
           </p>
 
