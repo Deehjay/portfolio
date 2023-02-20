@@ -44,10 +44,10 @@ export default {
         <div class="call-to-action flex flex-col">
           <div>
             <p
-              class="mt-3 laptop:text-xl phone:text-lg tablet:text-2xl phone:mt-1">
+              class="mt-3 laptop:text-xl phone:text-lg tablet:text-xl phone:mt-1">
               Full Stack Developer // Nottingham, UK
             </p>
-            <div class="flex gap-2">
+            <div class="flex gap-2 mb-4">
               <a
                 aria-label="My GitHub profile"
                 href="https://github.com/Deehjay"
