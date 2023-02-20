@@ -32,7 +32,8 @@ export default {
     href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
   <main>
     <section class="project-container flex justify-center items-center">
-      <div class="project-inner w-full flex justify-center gap-52">
+      <div
+        class="project-inner w-full flex justify-center gap-52 phone:flex-col phone:gap-2">
         <div class="w-1/3 content-left">
           <div>
             <VueperSlides
@@ -157,6 +158,25 @@ export default {
   visibility: visible;
 }
 
+@media screen and (max-width: 480px) {
+  .project-container {
+    height: 100%;
+    overflow: visible;
+    padding: 1rem;
+  }
+  .content-left {
+    width: 100%;
+  }
+
+  #test {
+    height: 300px !important;
+  }
+
+  .content-right {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1600px) {
   .project-inner {
     display: flex;
@@ -182,20 +202,6 @@ export default {
 
   .content-right {
     width: 80%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .content-left {
-    width: 100%;
-  }
-
-  #test {
-    height: 300px !important;
-  }
-
-  .content-right {
-    width: 100%;
   }
 }
 </style>
