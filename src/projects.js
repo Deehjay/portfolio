@@ -48,7 +48,7 @@ export const projects = [
       "/Portfolio/portfolio-4.png",
     ],
     github: "https://github.com/Deehjay/portfolio",
-    prod: "https://knowitallquiz.netlify.app/",
+    prod: "https://djames.io",
   },
   {
     projectName: "House Of Games API",
